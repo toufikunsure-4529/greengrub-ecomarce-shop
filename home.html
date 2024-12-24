@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap Demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+  </head>
+  <body>
+    <!-- NAV BAR SECTION -->
+    <header>
+      <nav class="bg-dark p-3 position-fixed w-100 top-0 shadow">
+        <div class="d-flex justify-content-between align-items-center">
+          <!-- Mobile Toggle Button -->
+          <button
+            class="d-md-none text-light fs-2"
+            id="navbarToggle"
+            aria-label="Toggle Navigation"
+          >
+            <i class="bi bi-justify-left"></i>
+          </button>
+
+          <!-- <i class="bi bi-x-lg"></i> -->
+
+          <!-- Left side menu -->
+          <ul
+            class="nav-list d-flex justify-content-start align-items-center gap-4 flex-grow-1 d-none d-md-flex m-0"
+          >
+            <li class="nav-item">
+              <a href="/" class="nav-link text-white">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="/" class="nav-link text-white">Product</a>
+            </li>
+            <li class="nav-item">
+              <a href="/" class="nav-link text-white">Collection</a>
+            </li>
+            <li class="nav-item">
+              <a href="/" class="nav-link text-white">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a href="/" class="nav-link text-white">Pages</a>
+            </li>
+          </ul>
+
+          <!-- Center logo -->
+          <div class="position-absolute start-50 translate-middle-x">
+            <a href="#">
+              <img
+                src="/assets/logo.avif"
+                alt="Greengrub-Shop"
+                class="nav-logo img-fluid"
+              />
+            </a>
+          </div>
+
+          <!-- Right side content -->
+          <div class="d-flex align-items-center gap-3">
+            <button class="d-none d-md-block">
+              <i class="bi bi-search text-white"></i>
+            </button>
+            <button class="d-none d-md-block">
+              <i class="bi bi-person text-white"></i>
+            </button>
+            <button class="btn btn-warning text-white">
+              <i class="bi bi-bag-dash"></i>
+              <span>Cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <ul
+          class="nav flex-column bg-dark text-white p-3 position-absolute top-100 start-0 w-100 d-md-none shadow-lg"
+          id="mobileMenu"
+        >
+          <li class="nav-item mb-2">
+            <a href="/" class="nav-link text-white d-flex align-items-center">
+              <i class="bi bi-house me-2"></i> Home
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a href="/" class="nav-link text-white d-flex align-items-center">
+              <i class="bi bi-box-seam me-2"></i> Product
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a href="/" class="nav-link text-white d-flex align-items-center">
+              <i class="bi bi-collection me-2"></i> Collection
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a href="/" class="nav-link text-white d-flex align-items-center">
+              <i class="bi bi-file-earmark-text me-2"></i> Blog
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a href="/" class="nav-link text-white d-flex align-items-center">
+              <i class="bi bi-layers me-2"></i> Pages
+            </a>
+          </li>
+          <li
+            class="nav-item mb-2 d-flex gap-3 justify-content-end align-items-center"
+          >
+            <button class="btn btn-link text-white p-0">
+              <i class="bi bi-search fs-5"></i>
+            </button>
+            <button class="btn btn-link text-white p-0">
+              <i class="bi bi-person fs-5"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- HERO SECTION -->
+      <div
+        id="carouselExample"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <!-- Carousel Inner -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <section class="hero-section slider1">
+              <div class="hero-content">
+                <p class="fw-semibold">ORGANIC & HEALTHY FRESH FOOD PROVIDER</p>
+                <h2 class="hero-content-title">
+                  Tasty & Fresh Healthy
+                  <br />
+                  Organics Foods
+                </h2>
+                <p>FLAT 30% OFF</p>
+                <div class="hero-offer-btn">
+                  <button class="btn btn-warning">Code: GREENGRUB001</button>
+                  <button class="btn btn-light text-uppercase">Shop Now</button>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="carousel-item">
+            <section class="hero-section slider2">
+              <div class="hero-content">
+                <p class="fw-semibold">READY FOR INSTANT AND CONVENIENT USE</p>
+                <h2 class="hero-content-title">
+                  Be Healthy & Eat Only <br />Pure Organic Food
+                </h2>
+                <p>FLAT 30% OFF</p>
+                <div class="hero-offer-btn">
+                  <button class="btn btn-warning">Code: GREENGRUB001</button>
+                  <button class="btn btn-light text-uppercase">Shop Now</button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <!-- -------------------------- SHOP BY CATEGORIES SECTION --------------------- -->
+      <section class="shop-categoris-container py-5 px-3 px-md-4" data-aos="fade-up">
+        <div
+          class="d-flex flex-column justify-content-center align-items-center"
+        >
+          <img
+            src="/assets/categories/categories-head.png"
+            alt="SHOP-BY-CATEGORIES
+            "
+          />
+          <p class="text-success fw-semibold">SHOP BY CATEGORIES</p>
+          <h2 class="text-center">
+            Organic & Healthy Foods <br />
+            Provider Farming
+          </h2>
+        </div>
+
+        <!-- card -->
+        <div class="categories-container"></div>
+      </section>
+
+      <!-- -------------------------- AMAZING FOOD SERVICE --------------------- -->
+      <section class="container p-5" data-aos="fade-up">
+        <div
+          class="d-flex flex-column justify-content-center align-items-center"
+        >
+          <img
+            src="/assets/categories/categories-head.png"
+            alt="SHOP-BY-CATEGORIES
+          "
+          />
+          <p class="text-success fw-semibold">AMAZING FOOD SERVICE</p>
+          <h2 class="text-center">Fresh & Tastier Organic Products</h2>
+        </div>
+
+        <!-- section -->
+        <div class="container py-1">
+          <div class="row align-items-center justify-content-center">
+            <!-- Left Column -->
+            <div class="col-md-4 d-flex flex-column align-items-center">
+              <!-- First Feature -->
+              <div class="mb-4">
+                <div class="icon-circle bg-light p-3 mb-2 food-service-img">
+                  <img
+                    src="/assets/food-services/1.webp"
+                    alt="Natural Foods"
+                    class="img-fluid"
+                    style="height: 40px"
+                  />
+                </div>
+                <h5>Natural Foods</h5>
+                <p class="text-muted">
+                  Farmers that only use natural fertilizers on their own land
+                  cultivate the organic fruits and vegetables we sell.
+                </p>
+              </div>
+              <!-- Second Feature -->
+              <div class="mb-4">
+                <div class="icon-circle bg-light p-3 mb-2 food-service-img">
+                  <img
+                    src="/assets/food-services/2.webp"
+                    alt="Everyday Fresh Food"
+                    class="img-fluid"
+                    style="height: 40px"
+                  />
+                </div>
+                <h5>Everyday Fresh Food</h5>
+                <p class="text-muted">
+                  Farmers that only use natural fertilizers on their own land
+                  cultivate the organic fruits and vegetables we sell.
+                </p>
+              </div>
+              <!-- Third Feature -->
+              <div class="">
+                <div class="icon-circle bg-light p-3 mb-2 food-service-img">
+                  <img
+                    src="/assets/food-services/3.avif"
+                    alt="100% Organic"
+                    class="img-fluid"
+                    style="height: 40px"
+                  />
+                </div>
+                <h5>100% Organic</h5>
+                <p class="text-muted">
+                  Farmers that only use natural fertilizers on their own land
+                  cultivate the organic fruits and vegetables we sell.
+                </p>
+              </div>
+            </div>
+
+            <!-- Central Image -->
+            <div
+              class="col-md-4 text-center"
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000"
+            >
+              <img
+                src="/assets/food-services/food_service.webp"
+                alt="Central Food Image"
+                class="img-fluid rounded-circle"
+                style="width: 100%"
+              />
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-4 d-flex flex-column align-items-center">
+              <!-- Fourth Feature -->
+              <div class="mb-4">
+                <div class="icon-circle bg-light p-3 mb-2 food-service-img">
+                  <img
+                    src="/assets/food-services/4.avif"
+                    alt="Best Quality Food"
+                    class="img-fluid"
+                    style="height: 40px"
+                  />
+                </div>
+                <h5>Best Quality Food</h5>
+                <p class="text-muted">
+                  Farmers that only use natural fertilizers on their own land
+                  cultivate the organic fruits and vegetables we sell.
+                </p>
+              </div>
+              <!-- Fifth Feature -->
+              <div class="mb-4">
+                <div class="icon-circle bg-light food-service-img p-3 mb-2">
+                  <img
+                    src="/assets/food-services/5.webp"
+                    alt="Healthy Food"
+                    class="img-fluid"
+                    style="height: 40px"
+                  />
+                </div>
+                <h5>Healthy Food</h5>
+                <p class="text-muted">
+                  Farmers that only use natural fertilizers on their own land
+                  cultivate the organic fruits and vegetables we sell.
+                </p>
+              </div>
+              <!-- Sixth Feature -->
+              <div class="">
+                <div class="icon-circle bg-light p-3 mb-2 food-service-img">
+                  <img
+                    src="/assets/food-services/6.webp"
+                    alt="100% Farming Food"
+                    class="img-fluid"
+                    style="height: 40px"
+                  />
+                </div>
+                <h5>100% Farming Food</h5>
+                <p class="text-muted">
+                  Farmers that only use natural fertilizers on their own land
+                  cultivate the organic fruits and vegetables we sell.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- AMAZING FOOD SERVICE VIDEO CARD -->
+      <div class="video-inner mb-5 container">
+        <div
+          class="video-inner-container position-relative d-flex justify-content-center align-items-center overflow-hidden rounded"
+        >
+          <img
+            src="/assets/food-services/video-inner-img.webp"
+            alt="Fresh Organic Food"
+            class="video-inner-img img-fluid"
+          />
+          <div
+            class="video-inner-content position-absolute text-white text-center p-3"
+          >
+            <span><i class="bi bi-play-circle-fill fs-1"></i></span>
+            <p class="fw-semibold mb-2">
+              Organic & Healthy Fresh Foods Provider
+            </p>
+            <h3 class="fw-bold fs-1">
+              Now Honest Products <br />Available Now
+            </h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- section FRESH PRODUCTS  -->
+      <section class="container" data-aos="fade-up">
+        <div
+          class="d-flex flex-column justify-content-center align-items-center"
+        >
+          <img
+            src="/assets/products/L01-seperator.webp"
+            alt="FRESH-PRODUCTS
+
+          "
+          />
+          <p class="text-success fw-semibold">FRESH PRODUCTS</p>
+          <h2 class="text-center section-title fw-semibold">
+            Today’s new honest products <br />available now
+          </h2>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="/js/Navbar.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

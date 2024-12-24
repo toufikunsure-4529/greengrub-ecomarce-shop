@@ -1,0 +1,234 @@
+nav {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  backdrop-filter: blur(5px); /* Adds a blur effect */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.slider1 {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  background: url("/assets/food-services/video-inner-img.webp") center/cover
+    no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 0; /* Ensure no margin pushing it down */
+}
+.slider1::before {
+  content: "";
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.001); /* Overlay with 50% opacity */
+  z-index: 1;
+}
+
+.slider2 {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  background: url("/assets/banner/banner-1.webp") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 0; /* Ensure no margin pushing it down */
+}
+.slider2::before {
+  content: "";
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.001); /* Overlay with 50% opacity */
+  z-index: 1;
+}
+
+.hero-offer-btn {
+  position: relative;
+  z-index: 9999;
+}
+
+header {
+  position: relative;
+}
+
+nav a {
+  color: #fff;
+  font-weight: 500;
+}
+
+.nav-logo {
+  max-height: 50px;
+}
+
+@media (max-width: 768px) {
+  #mobileMenu {
+    transform: translateX(-100%); /* Start hidden off the left side */
+    transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
+    z-index: 1050;
+  }
+  .nav-logo {
+    max-height: 36px;
+  }
+
+  #mobileMenu.open {
+    transform: translateX(0); /* Slide into view */
+  }
+}
+
+.hero-content-title {
+  font-family: "Gentium Plus", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 55px;
+}
+
+/* SHOP BY CATEGORIES */
+.serviceCard {
+  width: 150px;
+  height: 150px;
+}
+.serviceCard .card-img-top {
+  transition: all 0.5s ease-in;
+}
+
+.serviceCard .card-img-top:hover {
+  transform: scale(1.2);
+}
+
+.categories-card {
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+}
+
+.categories-card:hover {
+  color: green;
+}
+
+.categories-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Dynamic columns */
+  gap: 15px;
+  margin: 1rem;
+}
+
+.categories-card {
+  padding: 1rem;
+  text-align: center;
+}
+
+.serviceCard .card-img-top:hover {
+  transform: scale(1.2); /* Reduce hover scale for mobile */
+}
+
+@media (max-width: 768px) {
+  .serviceCard {
+    width: 100px;
+    height: 100px;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .categories-card {
+    padding: 0.5rem;
+  }
+
+  .card-img-top {
+    width: 100px;
+    height: 100px; /* Smaller images for compact view */
+  }
+
+  .categories-container {
+    grid-template-columns: repeat(1, 1fr); /* Dynamic columns */
+    gap: 15px;
+    margin: 1rem;
+  }
+}
+
+.shop-categoris-container {
+  background-color: #f9f6f1;
+}
+
+/* AMAZING FOOD SERVICE */
+.food-service-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  overflow: hidden;
+  background-color: #f9f6f1;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+
+.food-service-img img:hover {
+  transform: rotateY(180deg);
+  transition: all 0.5s ease;
+}
+
+.icon-circle {
+  border-radius: 50%;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h5 {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.video-inner {
+  max-width: 100%;
+}
+
+.video-inner-container {
+  width: 100%;
+  height: auto;
+  /* aspect-ratio: 16/9; */
+  overflow: hidden;
+  position: relative;
+  border-radius: 0.5rem; /* Adds rounded corners */
+  cursor: pointer;
+}
+
+.video-inner-img {
+  width: 100%;
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.video-inner-img:hover {
+  transform: scale(1.1); /* Smooth scaling effect */
+  filter: brightness(0.9); /* Slightly dim the image */
+}
+
+.video-inner-content {
+  z-index: 2; /* Ensure content stays on top */
+  font-family: "Gentium Plus", serif;
+}
+
+.video-inner-container:hover .video-inner-content {
+  transition: transform 0.4s ease;
+}
+
+/* Products */
+
+.section-title {
+  font-family: "Gentium Plus", serif;
+}

@@ -32,7 +32,7 @@
   <body>
     <!-- NAV BAR SECTION -->
     <header>
-      <nav class="bg-dark p-3 position-fixed w-100 top-0 shadow">
+      <nav class="bg-dark p-3 position-fixed top-0 shadow">
         <div class="d-flex justify-content-between align-items-center">
           <!-- Mobile Toggle Button -->
           <button
@@ -79,13 +79,23 @@
 
           <!-- Right side content -->
           <div class="d-flex align-items-center gap-3">
-            <button class="d-none d-md-block">
+            <button
+              class="d-none d-md-block"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#searchItemModal"
+            >
               <i class="bi bi-search text-white"></i>
             </button>
             <button class="d-none d-md-block">
               <i class="bi bi-person text-white"></i>
             </button>
-            <button class="btn btn-warning text-white">
+            <button
+              class="btn btn-warning text-white"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#cartView"
+              aria-controls="cartView"
+            >
               <i class="bi bi-bag-dash"></i>
               <span>Cart</span>
             </button>
@@ -125,8 +135,12 @@
           <li
             class="nav-item mb-2 d-flex gap-3 justify-content-end align-items-center"
           >
-            <button class="btn btn-link text-white p-0">
-              <i class="bi bi-search fs-5"></i>
+            <button
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#searchItemModal"
+            >
+              <i class="bi bi-search text-white"></i>
             </button>
             <button class="btn btn-link text-white p-0">
               <i class="bi bi-person fs-5"></i>
@@ -136,6 +150,104 @@
       </nav>
     </header>
     <main>
+      <!-- Modal Search Menu View -->
+      <div
+        class="modal fade"
+        id="searchItemModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header border-0">
+              <button
+                type="button"
+                class="btn-close btn-close-dark"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="input-group mb-4">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="searchInput"
+                    placeholder="Search here..."
+                    aria-label="Search"
+                    aria-describedby="searchButton"
+                  />
+                  <button
+                    class="btn btn-outline-primary"
+                    type="button"
+                    id="searchButton"
+                  >
+                    <i class="bi bi-search"></i>
+                  </button>
+                </div>
+              </form>
+              <div class="mt-3">
+                <h6 class="fw-semibold">Popular Searches:</h6>
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <a
+                      href="#"
+                      class="text-decoration-none badge bg-light text-light px-3 py-2"
+                      >Grocery</a
+                    >
+                  </li>
+                  <li class="list-inline-item">
+                    <a
+                      href="#"
+                      class="text-decoration-none badge bg-light text-light px-3 py-2"
+                      >Food</a
+                    >
+                  </li>
+                  <li class="list-inline-item">
+                    <a
+                      href="#"
+                      class="text-decoration-none badge bg-light text-light px-3 py-2"
+                      >Vegetables</a
+                    >
+                  </li>
+                  <li class="list-inline-item">
+                    <a
+                      href="#"
+                      class="text-decoration-none badge bg-light text-light px-3 py-2"
+                      >Fruits</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cart Section  View Off canvas -->
+
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="cartView"
+        aria-labelledby="offcanvasRightLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">
+            Offcanvas right
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">...</div>
+      </div>
+
       <!-- HERO SECTION -->
       <div
         id="carouselExample"
@@ -200,7 +312,10 @@
       </div>
 
       <!-- -------------------------- SHOP BY CATEGORIES SECTION --------------------- -->
-      <section class="shop-categoris-container py-5 px-3 px-md-4" data-aos="fade-up">
+      <section
+        class="shop-categoris-container py-5 px-3 px-md-4"
+        data-aos="fade-up"
+      >
         <div
           class="d-flex flex-column justify-content-center align-items-center"
         >
@@ -359,14 +474,14 @@
         </div>
       </section>
       <!-- AMAZING FOOD SERVICE VIDEO CARD -->
-      <div class="video-inner mb-5 container">
+      <div class="video-inner mb-5">
         <div
           class="video-inner-container position-relative d-flex justify-content-center align-items-center overflow-hidden rounded"
         >
           <img
             src="/assets/food-services/video-inner-img.webp"
             alt="Fresh Organic Food"
-            class="video-inner-img img-fluid"
+            class="video-inner-img img-fluid w-100"
           />
           <div
             class="video-inner-content position-absolute text-white text-center p-3"
@@ -375,7 +490,7 @@
             <p class="fw-semibold mb-2">
               Organic & Healthy Fresh Foods Provider
             </p>
-            <h3 class="fw-bold fs-1">
+            <h3 class="fw-bold fs-2">
               Now Honest Products <br />Available Now
             </h3>
           </div>
@@ -400,6 +515,200 @@
         </div>
       </section>
     </main>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer text-light py-5">
+      <div class="container">
+        <div class="row gy-5">
+          <!-- Subscribe Section -->
+          <div class="col-12 col-md-3">
+            <h3 class="h5 mb-4 fw-bold">Stay Updated!</h3>
+            <p class="mb-3">
+              Sign up for exclusive news, updates, and get 10% off your first
+              order.
+            </p>
+            <form>
+              <div class="input-group d-flex gap-2">
+                <input
+                  type="email"
+                  class="form-control rounded"
+                  id="subscribeEmail"
+                  placeholder="Enter your email"
+                  aria-label="Email"
+                />
+                <button
+                  class="btn btn-warning text-uppercase rounded"
+                  type="button"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+            <div class="d-flex gap-4 fs-4 mt-4">
+              <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="text-light"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <!-- Customer Service Menu -->
+          <div class="col-6 col-md-3">
+            <h5 class="fs-5 mb-4 fw-bold">Customer Service</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-light text-decoration-none mb-2 d-block"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none mb-2 d-block"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none mb-2 d-block"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none mb-2 d-block"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none mb-2 d-block"
+                  >Shopping Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none mb-2 d-block"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none mb-2 d-block"
+                  >Return & Exchange</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- My Account Menu -->
+          <div class="col-6 col-md-3">
+            <h5 class="fs-5 mb-4 fw-bold">My Account</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-light text-decoration-none mb-2 d-block"
+                  >Track Your Order</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none mb-2 d-block"
+                  >Gift Cards</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none mb-2 d-block"
+                  >Store Locator</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none mb-2 d-block"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none mb-2 d-block"
+                  >Affiliate Program</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-12 col-md-3">
+            <h5 class="fs-5 mb-4 fw-bold">Contact Info</h5>
+            <ul class="list-unstyled">
+              <li class="d-flex align-items-start mb-3">
+                <i class="bi bi-headset fs-4 me-3"></i>
+                <div>
+                  <p class="mb-1">Hotline Free 24/7:</p>
+                  <a
+                    href="tel:+18001234567"
+                    class="text-light text-decoration-none"
+                    >+1 800 123 4567</a
+                  >
+                </div>
+              </li>
+              <li class="d-flex align-items-start mb-3">
+                <i class="bi bi-geo-alt fs-4 me-3"></i>
+                <span>1010 White Street Block, USA</span>
+              </li>
+              <li class="d-flex align-items-start">
+                <i class="bi bi-envelope fs-4 me-3"></i>
+                <a
+                  href="mailto:admin@gmail.com"
+                  class="text-light text-decoration-none"
+                  >admin@gmail.com</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- Bottom Footer -->
+        <!-- Bottom Part Footer -->
+        <div>
+          <!-- menu bootom -->
+          <div class="bottom-menu">
+            <ul
+              class="list-unstyled d-flex justify-content-center align-items-center gap-3"
+            >
+              <li>
+                <a href="#" class="text-light text-decoration-none">About Us</a>
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none">Contact</a>
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none">FAQ</a>
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none"
+                  >Shopping Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none"
+                  >Return & Exchange</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div
+            class="text-center mt-4 d-flex justify-content-between align-items-center flex-column-reverse flex-md-row"
+          >
+            <p class="mb-0 copyright">
+              &copy; 2024 GreenGrub Organic Shop. All Rights Reserved.
+            </p>
+            <img src="/assets/payment-source.PNG" alt="Payment-accept" />
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

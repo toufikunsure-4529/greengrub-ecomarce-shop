@@ -1,10 +1,37 @@
 nav {
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-  backdrop-filter: blur(5px); /* Adds a blur effect */
+  width: 100%;
+  position: absolute;
+  z-index: 1000;
+}
+
+.stickyNav {
   position: fixed;
   top: 0;
-  width: 100%;
   z-index: 1000;
+  width: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Semi-transparent black with alpha channel */
+  backdrop-filter: blur(5px); /* Adds a blur effect */
+  animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+  0% {
+    top: -100px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    background: black;
+  }
 }
 
 .slider1 {
@@ -64,8 +91,9 @@ header {
 }
 
 nav a {
-  color: #fff;
-  font-weight: 500;
+  color: #fff !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
 }
 
 .nav-logo {
@@ -80,6 +108,10 @@ nav a {
   }
   .nav-logo {
     max-height: 36px;
+  }
+
+  nav a {
+    font-size: 16px !important;
   }
 
   #mobileMenu.open {
@@ -317,4 +349,3 @@ h5 {
     padding: 10px; /* Optional padding */
   }
 }
-

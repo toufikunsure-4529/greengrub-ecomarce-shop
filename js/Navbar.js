@@ -13,3 +13,12 @@ navbarToggleBtn.addEventListener("click", function () {
     icon.classList.add("bi-justify-left");
   }
 });
+
+window.addEventListener("scroll", () => {
+  const navContainer = document.getElementById("nav-container");
+  if (window.scrollY > 50) {
+    navContainer.classList.add("stickyNav");
+  } else {
+    navContainer.classList.remove("stickyNav");
+  }
+});
